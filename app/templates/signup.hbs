@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="small-4 columns"></div>
+  <div class="small-4 columns form">
+    <h4 class="text-center">Sign Up:</h4>
+    <label>Username
+      {{input type="text" value=username placeholder="Username"}}
+    </label>
+    <label>First Name
+      {{input type="text" value=firstName placeholder="First Name"}}
+    </label>
+    <label>Last Name
+      {{input type="text" value=lastName placeholder="Last Name"}}
+    </label>
+    <label>Email
+      {{input type="text" value=email placeholder="Email"}}
+    </label>
+    <label>Password
+      {{input type="password" value=password placeholder="Password"}}
+    </label>
+    <label>Password Again
+      {{input type="password" value=passwordAgain placeholder="Password Again"}}
+    </label>
+    <p><button class="button expanded" {{action "signUp"}} >Sign Up</button></p>
+  </div>
+  <div class="small-4 columns"></div>
+</div>

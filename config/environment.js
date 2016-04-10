@@ -4,6 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'auction',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -11,6 +12,10 @@ module.exports = function(environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
+    },
+    firebase: 'https://auctionacro.firebaseio.com/',
+    torii: {
+      sessionServiceName: 'session'
     },
 
     APP: {

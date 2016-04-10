@@ -1,0 +1,20 @@
+
+<div class="row">
+  <div class="small-4 columns"></div>
+  <div class="small-4 columns form">
+    <h4 class="text-center">Login:</h4>
+    <label>Username
+      {{input type="text" value=userEmail placeholder="Email"}}
+    </label>
+    <label>Password
+      {{input type="password" value=userPassword placeholder="Password"}}
+    </label>
+    <p><button class="button expanded" {{action "login"}} >Login</button></p>
+    <p><button class="button expanded" {{action "toSignUp"}} >Sign Up</button></p>
+  </div>
+  <div class="small-4 columns"></div>
+</div>
+
+{{#if failedToLogin}}
+    <div class="login-error column">You entered a incorrect Username or Password, please try again</div>
+{{/if}}
