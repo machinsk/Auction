@@ -33,6 +33,11 @@ body{
   background-color: $grey;
 }
 
+.noMatch {
+  $input-border: 1px solid $primary-color;
+  $input-border-focus: 1px solid $primary-color;
+}
+
 
 li {
   padding: 0.2rem;

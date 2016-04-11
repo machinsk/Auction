@@ -10,6 +10,10 @@ Router.map(function() {
   this.route('login');
   this.route('signup');
   this.route('private', { path: ':user_id' });
+  this.route('auctions', function() {
+    this.route('new');
+  });
+  this.route('auction', { path: '/auction/:auction_id' });
 });
 
 export default Router;

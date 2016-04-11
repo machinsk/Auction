@@ -1,0 +1,21 @@
+<h4>{{auction.title}} Auction:</h4>
+
+<ul class="list-jobs columns">
+  <li class="small-12 job-link list-item-one list-item-header">
+    <span class="columns small-4">Title</span>
+    <span class="columns small-4"></span>
+    <span class="columns small-4">Price</span>
+  </li>
+  {{#each bids as |bid|}}
+    <li class="small-12 job-link list-item-one">
+      <span class="columns small-2 list-item-span">{{bid.title}}</span>
+      <span class="columns small-4 list-item-span"></span>
+      <span class="columns small-3 list-item-span">{{auction.price}}</span>
+    </li>
+  {{else}}
+    <li class="small-12 job-link list-item-one">
+      No bids to display.
+    </li>
+  {{/each}}
+  <li class="small-12 job-link list-item-one list-item-footer"></li>
+</ul>

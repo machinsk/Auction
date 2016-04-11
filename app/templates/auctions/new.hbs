@@ -1,0 +1,35 @@
+
+<div class="row">
+  <div class="small-4 columns"></div>
+  <div class="small-4 columns form">
+    <h4 class="text-center">Create A New Auction:</h4>
+    <label>Title
+      {{input type="text" value=title placeholder="Title"}}
+    </label>
+    <label>Description
+      {{textarea rows="4" type="text" value=description placeholder="Description"}}
+    </label>
+    <label>Minimum Bid
+      {{input type="text" value=minBid placeholder="$0.00"}}
+    </label>
+    <label>Reserve Price
+      {{input type="text" value=reserve placeholder="$0.00"}}
+    </label>
+    <label>Category
+      {{input type="text" value=category placeholder="$0.00"}}
+    </label>
+    <label>End Date (Midnight local time):
+    {{date-picker
+      date=auctionEndDate
+      valueFormat='YYYY-MM-DD'
+      format='MM-DD-YYYY'
+      yearRange='-1,2'
+      id='job-end-date-input'}}
+  </label>
+    <!-- <label>Images
+      {{input type="password" value=password placeholder="Password"}}
+    </label> -->
+    <p><button class="button expanded" {{action "createAuction"}} >Create Auction</button></p>
+  </div>
+  <div class="small-4 columns"></div>
+</div>
