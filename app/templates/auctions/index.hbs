@@ -1,0 +1,36 @@
+
+<div class="row">
+  <div class="small-1 columns"></div>
+  <div class="small-8 columns">
+    <h4 class="title">Current Auctions:</h4>
+  </div>
+  <button class="button small-2" {{action 'createAuction'}}>Create Auction</button>
+  <div class="small-1 columns"></div>
+</div>
+
+<div class="row">
+  <div class="small-1 columns"></div>
+  <ul class="list-jobs small-10 columns">
+    <li class="small-12 job-link list-item-one list-item-header">
+      <span class="columns small-4">Title</span>
+      <span class="columns small-4"></span>
+      <span class="columns small-4">Price</span>
+    </li>
+    {{#each auctions as |auction|}}
+      {{#link-to 'auction' auction.id tagName='li' class="small-12 job-link list-item-one" }}
+        <div class="row">
+          <span class="columns small-4 list-item-span">{{auction.title}}</span>
+          <span class="columns small-1 list-item-span"></span>
+          <span class="columns small-3 list-item-span">{{if auction.noBid "Min Bid:" "Current Bid:"}}</span>
+          <span class="columns small-4 list-item-span">{{if auction.noBid auction.minBid auction.currentBid}}</span>
+        </div>
+      {{/link-to}}
+    {{else}}
+      <li class="small-12 job-link list-item-one">
+        No auctions to display.
+      </li>
+    {{/each}}
+    <li class="small-12 job-link list-item-one list-item-footer"></li>
+  </ul>
+  <div class="small-1 columns"></div>
+</div>

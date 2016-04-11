@@ -1,5 +1,15 @@
-<div>
-  {{title-bar logoutAction='logoutAction'}}
+<div class="top-bar">
+  <div class="row">
+    <div class='small-2 columns'></div>
+    <div class="small-8 columns ">
+      <h2>Machinski's Auction House</h2>
+    </div>
+    {{#if session.isAuthenticated}}
+       <button class="button small-2" {{action 'logout'}}>Logout</button>
+    {{else}}
+      <div class='small-2 columns'></div>
+    {{/if}}
+  </div>
 </div>
 {{outlet}}
 

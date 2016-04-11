@@ -6,5 +6,10 @@ export default Ember.Route.extend({
     if(!this.get('session.isAuthenticated')){
       this.transitionTo('application');
     }
+  },
+  actions: {
+    createAuction: function() {
+      this.transitionTo('auctions.new');
+    }
   }
 });
