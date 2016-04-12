@@ -9,14 +9,15 @@
     <label>Description
       {{textarea rows="4" type="text" value=description placeholder="Description"}}
     </label>
-    <label>Minimum Bid
-      {{input type="text" value=minBid placeholder="$0.00"}}
-    </label>
     <label>Reserve Price
       {{input type="text" value=reserve placeholder="$0.00"}}
     </label>
     <label>Category
-      {{input type="text" value=category placeholder="$0.00"}}
+      <select onchange={{action "selectCategory" value="target.value"}}>
+        {{#each categories as |categoryChoice|}}
+          <option value={{categoryChoice}} selected={{eq category categoryChoice}}>{{categoryChoice}}</option>
+        {{/each}}
+      </select>
     </label>
     <label>End Date (Midnight local time):
     {{date-picker
@@ -25,7 +26,7 @@
       format='MM-DD-YYYY'
       yearRange='-1,2'
       id='job-end-date-input'}}
-  </label>
+    </label>
     <!-- <label>Images
       {{input type="password" value=password placeholder="Password"}}
     </label> -->

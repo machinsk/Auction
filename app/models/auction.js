@@ -3,12 +3,13 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   title: DS.attr('string'),
   description: DS.attr('string'),
-  tag: DS.attr('string'),
+  category: DS.attr('string'),
   reserve: DS.attr('number'),
-  minBid: DS.attr('number'),
-  currentBid: DS.attr('number'),
-  noBid: DS.attr('boolean', { defaultValue: false }),
+  currentBid: DS.attr('number', { defaultValue: 0 }),
+  noBid: DS.attr('boolean', { defaultValue: true }),
+  passedRev: DS.attr('boolean', { defaultValue: false }),
   createdOn: DS.attr('date'),
+  endDate: DS.attr('date'),
 
   //Relationships
   buyer: DS.belongsTo('user'),

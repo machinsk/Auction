@@ -11,7 +11,7 @@ export default Ember.Route.extend({
            email: email,
            password: password
       }).then(function() {
-          this.transitionTo('auctions');
+        this.transitionTo('auctions');
       }.bind(this));
     },
     toSignUp: function() {

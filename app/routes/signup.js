@@ -8,7 +8,7 @@ export default Ember.Route.extend({
       var username = controller.get('username');
       var firstName = controller.get('firstName');
       var lastName = controller.get('lastName');
-      var createdOn = Date();
+      var createdOn = new Date();
       var email = controller.get('email');
       var password = controller.get('password');
       var passwordAgain = controller.get('passwordAgain');
@@ -28,7 +28,6 @@ export default Ember.Route.extend({
               'email': email,
               'password': password
             }).then(function(){
-              console.log('user creation');
               var user = _this.store.createRecord('user', {
                 id: userData.uid,
                 username: username,

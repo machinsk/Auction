@@ -10,7 +10,8 @@
     "foundation-sites": "~6.1.0",
     "jquery": "1.11.3",
     "pikaday": "^1.4.0",
-    "moment": "^2.12.0"
+    "moment": "^2.12.0",
+    "ember-cli-currency-shim": "^0.0.2"
   },
   "resolutions": {
     "jquery": "1.11.3"

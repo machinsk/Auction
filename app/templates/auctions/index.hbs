@@ -1,10 +1,17 @@
 
 <div class="row">
   <div class="small-1 columns"></div>
-  <div class="small-8 columns">
+  <div class="small-4 columns">
     <h4 class="title">Current Auctions:</h4>
   </div>
-  <button class="button small-2" {{action 'createAuction'}}>Create Auction</button>
+  <div class="small-4 columns">
+    <select onchange={{action "selectCategory" value="target.value"}}>
+      {{#each categories as |categoryChoice|}}
+        <option value={{categoryChoice}} selected={{eq category categoryChoice}}>{{categoryChoice}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <button class="button small-2" {{action 'newAuction'}}>Create Auction</button>
   <div class="small-1 columns"></div>
 </div>
 
@@ -13,16 +20,15 @@
   <ul class="list-jobs small-10 columns">
     <li class="small-12 job-link list-item-one list-item-header">
       <span class="columns small-4">Title</span>
-      <span class="columns small-4"></span>
-      <span class="columns small-4">Price</span>
+      <span class="columns small-4">Category</span>
+      <span class="columns small-4">Current Bid:</span>
     </li>
-    {{#each auctions as |auction|}}
+    {{#each model.auctions as |auction|}}
       {{#link-to 'auction' auction.id tagName='li' class="small-12 job-link list-item-one" }}
         <div class="row">
           <span class="columns small-4 list-item-span">{{auction.title}}</span>
-          <span class="columns small-1 list-item-span"></span>
-          <span class="columns small-3 list-item-span">{{if auction.noBid "Min Bid:" "Current Bid:"}}</span>
-          <span class="columns small-4 list-item-span">{{if auction.noBid auction.minBid auction.currentBid}}</span>
+          <span class="columns small-4 list-item-span">{{auction.category}}</span>
+          <span class="columns small-4 list-item-span">{{if auction.noBid "No Bid" auction.currentBid}}</span>
         </div>
       {{/link-to}}
     {{else}}

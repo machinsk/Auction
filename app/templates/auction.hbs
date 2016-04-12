@@ -1,16 +1,36 @@
-<h4>{{auction.title}} Auction:</h4>
+<div class="row">
+  <div class="small-1 columns"></div>
+  <div class="small-8 columns">
+    <h4 class="title">{{auction.title}} Auction:</h4>
+  </div>
+  <button class="button small-2" {{action 'toggleBid'}}>New Bid</button>
+  <div class="small-1 columns"></div>
+</div>
+
+{{#if showBid}}
+<div class="row">
+  <div class="small-1 columns"></div>
+  <div class="small-8 columns">
+    <label>Bid Amount
+      {{input type="text" value=newBid placeholder="$0.00"}}
+    </label>
+  </div>
+  <button class="button small-2" {{action 'bid' model.auction.id}}>Bid</button>
+  <div class="small-1 columns"></div>
+</div>
+{{/if}}
 
 <ul class="list-jobs columns">
   <li class="small-12 job-link list-item-one list-item-header">
-    <span class="columns small-4">Title</span>
+    <span class="columns small-4">User</span>
     <span class="columns small-4"></span>
-    <span class="columns small-4">Price</span>
+    <span class="columns small-4">Amount</span>
   </li>
-  {{#each bids as |bid|}}
+  {{#each model.bids as |bid|}}
     <li class="small-12 job-link list-item-one">
-      <span class="columns small-2 list-item-span">{{bid.title}}</span>
+      <span class="columns small-4 list-item-span">{{bid.bidFrom.username}}</span>
       <span class="columns small-4 list-item-span"></span>
-      <span class="columns small-3 list-item-span">{{auction.price}}</span>
+      <span class="columns small-4 list-item-span">{{bid.amount}}</span>
     </li>
   {{else}}
     <li class="small-12 job-link list-item-one">

@@ -6,10 +6,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('protected');
   this.route('login');
   this.route('signup');
-  this.route('private', { path: ':user_id' });
   this.route('auctions', function() {
     this.route('new');
   });
