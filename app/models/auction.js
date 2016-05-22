@@ -14,4 +14,5 @@ export default DS.Model.extend({
   //Relationships
   buyer: DS.belongsTo('user'),
   seller: DS.belongsTo('user'),
+  bids: DS.hasMany('bid', { inverse: 'bidOn' }),
 });

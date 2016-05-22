@@ -7,7 +7,7 @@ export default DS.Model.extend({
   createdOn: DS.attr('date'),
 
   //Relationships
-  createdAuction: DS.hasMany('auction', { inverse: 'seller' }),
-  wonAuction: DS.hasMany('auction', { inverse: 'buyer' }),
-  myBid: DS.hasMany('bid'),
+  createdAuctions: DS.hasMany('auction', { inverse: 'seller' }),
+  wonAuctions: DS.hasMany('auction', { inverse: 'buyer' }),
+  myBids: DS.hasMany('bid', { inverse: 'bidFrom' }),
 });

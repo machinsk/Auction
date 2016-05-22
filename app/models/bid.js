@@ -7,5 +7,5 @@ export default DS.Model.extend({
 
   //Relationships
   bidOn: DS.belongsTo('auction'),
-  bidFrom: DS.belongsTo('user', {async: true}),
+  bidFrom: DS.belongsTo('user'),
 });
