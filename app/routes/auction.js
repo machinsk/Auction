@@ -11,11 +11,6 @@ export default Ember.Route.extend({
   model(params) {
     return Ember.RSVP.hash({
       auction: this.store.findRecord('auction', params.auction_id),
-      bids: this.store.query('bid', {
-        orderBy: 'amount',
-        limitToLast: 10
-      },
-    ),
     });
   },
 });
